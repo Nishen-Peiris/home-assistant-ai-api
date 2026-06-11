@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proposal Console</title>
+  <link rel="stylesheet" href="/styles.css?v=20260611b">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Home Assistant AI API</p>
+        <h1>Proposal Console</h1>
+        <p class="hero-copy">Review generated automations and inspect YAML without leaving the server UI.</p>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="proposal-stack">
+        <div id="emptyState" class="empty-state hidden">
+          <p class="panel-kicker">Inspection</p>
+          <h2>No proposals available</h2>
+          <p>Create a proposal through <code>POST /api/automation/propose</code> or the MCP <code>propose_automation</code> tool, then it will appear here.</p>
+        </div>
+        <div id="proposalList" class="proposal-list" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/app.js?v=20260611b" defer></script>
+</body>
+</html>

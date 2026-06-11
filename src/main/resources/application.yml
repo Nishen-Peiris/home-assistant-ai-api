@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+home-assistant:
+  url: ${HA_URL:http://homeassistant.local:8123}
+  token: ${HA_TOKEN:change-me}
+
+spring:
+  ai:
+    mcp:
+      server:
+        name: home-assistant-ai-api
+        version: 1.0.0
+        type: ASYNC
+        protocol: STREAMABLE
+        streamable-http:
+          mcp-endpoint: /mcp
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

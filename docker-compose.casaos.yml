@@ -1,0 +1,23 @@
+name: home-assistant-ai-api
+
+services:
+  home-assistant-ai-api:
+    build: .
+    image: home-assistant-ai-api:local
+    container_name: home-assistant-ai-api
+    restart: unless-stopped
+    ports:
+      - "8085:8080"
+    environment:
+      HA_URL: "http://YOUR_HOME_ASSISTANT_IP:8123"
+      HA_TOKEN: "YOUR_LONG_LIVED_ACCESS_TOKEN"
+    labels:
+      icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/home-assistant.png
+
+x-casaos:
+  main: home-assistant-ai-api
+  scheme: http
+  port_map: "8085"
+  title:
+    en_us: Home Assistant AI API
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/home-assistant.png
